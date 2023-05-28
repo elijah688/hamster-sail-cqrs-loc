@@ -9,16 +9,18 @@ import (
 )
 
 type Location struct {
-	ID uuid.UUID `json:"id"`
-	X  float32   `json:"x"`
-	Y  float32   `json:"y"`
+	ID        uuid.UUID `json:"id"`
+	X         float32   `json:"x"`
+	Y         float32   `json:"y"`
+	CreatedAt time.Time `json:"created_at"`
 }
 
 func NewLocation() *Location {
 	return &Location{
-		ID: uuid.New(),
-		X:  generateRandomFloat(),
-		Y:  generateRandomFloat(),
+		ID:        uuid.New(),
+		X:         generateRandomFloat(),
+		Y:         generateRandomFloat(),
+		CreatedAt: time.Now(),
 	}
 }
 
